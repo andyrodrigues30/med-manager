@@ -1,0 +1,13 @@
+services:
+  med-manager-db:
+    image: postgres:16.4-alpine
+    restart: always
+    env_file:
+      - path: ./db/.env
+    ports:
+      - "5432:5432"
+    volumes: 
+      - med-manager-db:/var/lib/postgresql/data/
+volumes:
+  med-manager-db:
+    driver: local
