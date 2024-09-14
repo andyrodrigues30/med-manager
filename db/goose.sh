@@ -1,7 +1,7 @@
 #! /bin/bash
 
 set -a
-. .env
+. ../.env
 set +a
 
 goose -dir ./migrations "$@"

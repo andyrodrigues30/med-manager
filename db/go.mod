@@ -1,4 +1,4 @@
-module gitlab.com/andrea_fj/db_training
+module github.com/andyrodrigues30/med-manager-db
 
 go 1.20
 

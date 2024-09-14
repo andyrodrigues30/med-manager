@@ -20,8 +20,8 @@ To run all services:
 Alternatively run services seperately follow the following steps.
 
 ### Step 1: The database
-#### Database Environment Variables
-Ensure the `.env` file has been created and located in `./db` with the following environment variables (ensure you add the postgres user name and password):
+#### Environment Variables
+Ensure the `.env` file has been created in the root directory with the following environment variables (ensure you add the postgres user name and password):
 
 ```
 POSTGRES_USER=<POSTGRES_USER>
@@ -36,13 +36,18 @@ GOOSE_DBSTRING="$DATABASE_URL"
 ```
 
 #### Database Migrations
-Apply the database migrations with `goose up`.
-chmod +x goose.sh
+Make `goose.sh` executeable: `chmod +x goose.sh`
+Apply the database migrations with `./goose.sh up`
 
-./goose.sh up
-./goose.sh status
+Check migration status with `./goose.sh status`
 
 #### Run The Database ONLY
-To run the Database only run the following docker command: `docker compose up med-manager-db`.
+To run the Database only run the following docker command: `docker compose up med-manager-db -d`.
 
 ### Step 2: The Account API Service
+#### Environment Variables
+Ensure the `.env` file has been created in the `account-service` directory with the following environment variables (ensure you add the postgres user name and password):
+
+```
+PORT=8000
+```
