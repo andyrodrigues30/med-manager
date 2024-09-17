@@ -18,14 +18,12 @@ func main() {
 	}))
 
 	// ==ROUTES==
-
-	// users
 	router.POST("/register", controllers.Register)
 	// router.POST("/login", controllers.Login)
 	// router.POST("/verify", controllers.Verify)
 
 	PORT := config.GetEnvVariable("PORT")
-	URL := "localhost:" + PORT
+	URL := ":" + PORT
 
 	router.Run(URL)
 }

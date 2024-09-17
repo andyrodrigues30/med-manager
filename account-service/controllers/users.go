@@ -7,5 +7,5 @@ import (
 )
 
 func Register(ctx *gin.Context) {
-	ctx.IndentedJSON(http.StatusOK, gin.H{"message": "User is successfully created."})
+	ctx.IndentedJSON(http.StatusOK, gin.H{"message": "User successfully created"})
 }

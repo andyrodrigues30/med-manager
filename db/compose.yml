@@ -1,0 +1,23 @@
+services:
+  mm-db:
+    image: postgres:16.4-alpine
+    restart: always
+    env_file:
+      - path: ./.env
+    ports:
+      - "5432:5432"
+    volumes: 
+      - mm-db:/var/lib/postgresql/data/
+    networks:
+      - med-network
+
+
+volumes:
+  mm-db:
+    driver: local
+
+
+networks:
+  med-network:
+    external: true
+

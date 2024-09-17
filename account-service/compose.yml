@@ -1,0 +1,20 @@
+services:
+  mm-account-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - path: .env
+    ports:
+      - "8000:8000"
+    restart: always
+    networks:
+      - med-network
+
+volumes:
+  mm-db:
+    driver: local
+
+networks:
+  med-network:
+    external: true
